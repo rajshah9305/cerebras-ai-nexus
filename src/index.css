@@ -2,71 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AI Agent Orchestration Design System - Orange & Black Elite Theme
+/* AI Agent Orchestration Design System - Award-winning dark theme
 All colors MUST be HSL for consistency across light/dark modes.
 */
 
 @layer base {
   :root {
-    /* Core black theme */
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
+    /* Core dark theme */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
 
     /* Glass morphism cards */
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
-    --card-glass: 0 0% 12%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --card-glass: 222 47% 8%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Vibrant orange primary for highlights & MVPs */
-    --primary: 25 100% 50%;
-    --primary-foreground: 0 0% 3%;
-    --primary-glow: 25 100% 65%;
+    /* Electric blue primary for AI theme */
+    --primary: 194 100% 50%;
+    --primary-foreground: 222 47% 4%;
+    --primary-glow: 194 100% 70%;
 
-    /* Orange secondary variations */
-    --secondary: 20 90% 45%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-glow: 20 100% 60%;
+    /* Purple secondary for premium feel */
+    --secondary: 270 50% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 270 100% 70%;
 
     /* Subtle variants */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 25 80% 20%;
-    --accent-foreground: 25 100% 65%;
+    --accent: 194 50% 15%;
+    --accent-foreground: 194 100% 70%;
 
-    /* Status colors with orange theme */
+    /* Status colors */
     --destructive: 0 75% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --success: 25 100% 50%;
-    --success-foreground: 0 0% 3%;
-    --warning: 35 100% 50%;
-    --warning-foreground: 0 0% 3%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 4%;
 
     /* Interactive elements */
-    --border: 0 0% 20%;
-    --input: 0 0% 12%;
-    --ring: 25 100% 50%;
+    --border: 222 47% 15%;
+    --input: 222 47% 10%;
+    --ring: 194 100% 50%;
 
-    /* Gradients for elite effects */
-    --gradient-primary: linear-gradient(135deg, hsl(25 100% 50%), hsl(35 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(20 90% 45%), hsl(25 80% 35%));
-    --gradient-background: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
-    --gradient-glass: linear-gradient(135deg, hsla(0 0% 12% / 0.8), hsla(0 0% 20% / 0.4));
-    --gradient-elite: linear-gradient(135deg, hsl(25 100% 50%), hsl(35 100% 60%), hsl(25 100% 45%));
+    /* Gradients for premium effects */
+    --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%), hsl(270 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 50% 25%), hsl(194 50% 30%));
+    --gradient-background: linear-gradient(135deg, hsl(222 47% 4%), hsl(222 47% 6%));
+    --gradient-glass: linear-gradient(135deg, hsla(222 47% 8% / 0.8), hsla(222 47% 12% / 0.4));
 
-    /* Shadows with orange glow effects */
-    --shadow-elegant: 0 10px 30px -10px hsla(25 100% 50% / 0.4);
-    --shadow-glow: 0 0 40px hsla(25 100% 65% / 0.5);
-    --shadow-glass: 0 8px 32px hsla(0 0% 0% / 0.5);
-    --shadow-elite: 0 20px 50px -15px hsla(25 100% 50% / 0.6);
+    /* Shadows with glow effects */
+    --shadow-elegant: 0 10px 30px -10px hsla(194 100% 50% / 0.3);
+    --shadow-glow: 0 0 40px hsla(194 100% 70% / 0.4);
+    --shadow-glass: 0 8px 32px hsla(0 0% 0% / 0.37);
 
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.75rem;
 
@@ -149,7 +146,7 @@ All colors MUST be HSL for consistency across light/dark modes.
     transition: var(--transition-smooth);
   }
 
-  /* Elite gradient utilities */
+  /* Gradient utilities */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -157,12 +154,8 @@ All colors MUST be HSL for consistency across light/dark modes.
   .gradient-secondary {
     background: var(--gradient-secondary);
   }
-  
-  .gradient-elite {
-    background: var(--gradient-elite);
-  }
 
-  /* Enhanced glow effects */
+  /* Glow effects */
   .glow-primary {
     box-shadow: var(--shadow-glow);
   }
@@ -170,12 +163,8 @@ All colors MUST be HSL for consistency across light/dark modes.
   .glow-elegant {
     box-shadow: var(--shadow-elegant);
   }
-  
-  .glow-elite {
-    box-shadow: var(--shadow-elite);
-  }
 
-  /* Advanced animation utilities */
+  /* Animation utilities */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -183,47 +172,13 @@ All colors MUST be HSL for consistency across light/dark modes.
   .transition-spring {
     transition: var(--transition-spring);
   }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
 
-  /* Elite hover animations */
+  /* Hover animations */
   .hover-lift {
-    @apply transition-spring hover:scale-105 hover:-translate-y-2;
+    @apply transition-smooth hover:scale-105 hover:-translate-y-1;
   }
   
   .hover-glow {
-    @apply transition-smooth hover:shadow-[0_0_40px_hsla(25_100%_50%/0.6)];
-  }
-  
-  .hover-float {
-    @apply transition-bounce hover:scale-110 hover:-translate-y-3 hover:rotate-1;
-  }
-  
-  .hover-pulse {
-    @apply hover:animate-pulse-glow;
-  }
-
-  /* Text effects */
-  .text-glow {
-    text-shadow: 0 0 20px hsla(25 100% 50% / 0.5);
-  }
-  
-  .text-elite {
-    background: var(--gradient-elite);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Elite cards */
-  .card-elite {
-    @apply glass border-primary/30 hover:border-primary/50 hover:glow-elite transition-spring;
-  }
-  
-  /* Premium buttons */
-  .btn-elite {
-    @apply gradient-elite text-black font-bold hover:scale-105 hover:glow-elite transition-spring shadow-elegant;
+    @apply transition-smooth hover:shadow-[0_0_30px_rgba(var(--primary)/0.3)];
   }
 }

@@ -52,30 +52,30 @@ const Navigation = () => {
       <nav className="hidden lg:flex fixed top-0 left-0 right-0 z-50 glass border-b border-border/20 px-6 py-4">
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 hover-float">
-            <div className="w-12 h-12 rounded-full gradient-elite flex items-center justify-center shadow-elite">
-              <Brain className="w-7 h-7 text-black" />
+          <Link to="/" className="flex items-center gap-3 hover-lift">
+            <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
+              <Brain className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="font-orbitron font-black text-2xl text-elite">
-                AGENTFLOW
+              <h1 className="font-bold text-xl bg-gradient-to-r from-primary to-secondary-glow bg-clip-text text-transparent">
+                AgentFlow
               </h1>
-              <p className="text-xs text-muted-foreground font-inter uppercase tracking-wider">Elite AI Platform</p>
+              <p className="text-xs text-muted-foreground">AI Orchestration</p>
             </div>
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               return (
                 <Link key={item.path} to={item.path}>
                   <Button
-                    variant={isActive(item.path) ? "elite" : "gradient-outline"}
-                    className="gap-3 transition-bounce hover-lift font-orbitron text-sm"
+                    variant={isActive(item.path) ? "gradient" : "glass"}
+                    className="gap-2 transition-spring"
                   >
-                    <Icon className="w-5 h-5" />
-                    {item.label.toUpperCase()}
+                    <Icon className="w-4 h-4" />
+                    {item.label}
                   </Button>
                 </Link>
               );
@@ -83,12 +83,12 @@ const Navigation = () => {
           </div>
 
           {/* Profile/Settings */}
-          <div className="flex items-center gap-4">
-            <Badge variant="outline" className="text-primary border-primary/50 bg-primary/10 font-orbitron font-bold px-3 py-1">
-              3 ACTIVE
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="text-success border-success/30">
+              3 Active
             </Badge>
-            <Button variant="elite" size="icon" className="hover-float">
-              <Settings className="w-5 h-5" />
+            <Button variant="glass" size="icon">
+              <Settings className="w-4 h-4" />
             </Button>
           </div>
         </div>
