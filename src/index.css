@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* AI Agent Orchestration Design System - Award-winning dark theme
+All colors MUST be HSL for consistency across light/dark modes.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core dark theme */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass morphism cards */
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --card-glass: 222 47% 8%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Electric blue primary for AI theme */
+    --primary: 194 100% 50%;
+    --primary-foreground: 222 47% 4%;
+    --primary-glow: 194 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Purple secondary for premium feel */
+    --secondary: 270 50% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 270 100% 70%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Subtle variants */
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 194 50% 15%;
+    --accent-foreground: 194 100% 70%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status colors */
+    --destructive: 0 75% 60%;
     --destructive-foreground: 210 40% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 4%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive elements */
+    --border: 222 47% 15%;
+    --input: 222 47% 10%;
+    --ring: 194 100% 50%;
 
-    --radius: 0.5rem;
+    /* Gradients for premium effects */
+    --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%), hsl(270 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 50% 25%), hsl(194 50% 30%));
+    --gradient-background: linear-gradient(135deg, hsl(222 47% 4%), hsl(222 47% 6%));
+    --gradient-glass: linear-gradient(135deg, hsla(222 47% 8% / 0.8), hsla(222 47% 12% / 0.4));
+
+    /* Shadows with glow effects */
+    --shadow-elegant: 0 10px 30px -10px hsla(194 100% 50% / 0.3);
+    --shadow-glow: 0 0 40px hsla(194 100% 70% / 0.4);
+    --shadow-glass: 0 8px 32px hsla(0 0% 0% / 0.37);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +130,55 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-background);
+  }
+}
+
+@layer utilities {
+  /* Glass morphism utilities */
+  .glass {
+    @apply backdrop-blur-xl bg-card-glass/80 border border-border/20;
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-md bg-accent/20 border border-border/30 hover:bg-accent/30;
+    transition: var(--transition-smooth);
+  }
+
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Animation utilities */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-[0_0_30px_rgba(var(--primary)/0.3)];
   }
 }
